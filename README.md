@@ -5,6 +5,43 @@ scanXploit 
 Objective:
 The goal of this project is to create a security tool that scans devices in a local network, identifies open ports, determines running services and their versions, and checks for known vulnerabilities in the software. The tool will produce a vulnerability report that can be used by network administrators to assess potential risks.
 
+Folder Structure:
+```
+project-root/
+│
+├── frontend/                       # React frontend (Optional)
+│   ├── public/
+│   ├── src/
+│   │   ├── components/             # Reusable UI components
+│   │   ├── pages/                  # Main pages (Dashboard, Reports, etc.)
+│   │   └── App.tsx                 # Main React component
+│   └── package.json                # Frontend dependencies
+│
+├── backend/                        # Node.js backend
+│   ├── src/
+│   │   ├── controllers/            # API request handlers (e.g., start scan, get results)
+│   │   ├── services/               # Business logic for scanning and vulnerability lookup
+│   │   ├── models/                 # Database models (for PostgreSQL)
+│   │   ├── routes/                 # API routes (e.g., /scan, /results)
+│   │   └── server.ts               # Entry point for the backend
+│   └── package.json                # Backend dependencies
+│
+├── scanner/                        # Nmap + Vulnerability scanning engine
+│   ├── nmap-scripts/               # Scripts to run Nmap scans
+│   ├── vulnerability-checker/      # Queries to Vulners/CIRCL API
+│   ├── scanProcessor.ts            # Logic to process scan results and match vulnerabilities
+│   └── scannerService.ts           # Service to handle scan lifecycle
+│
+├── database/                       # PostgreSQL configurations and schema definitions
+│   ├── schemas/                    # Table definitions (devices, services, vulnerabilities)
+│   └── migrations/                 # Database migrations
+│
+├── docker/                         # Docker setup files
+│   └── docker-compose.yml
+└── README.md                       # Project overview and setup instructions
+```
+
+
 High-Level Architecture Overview:
 1. Frontend (React + TypeScript) [Optional]:
     * Purpose: Provide a user-friendly web interface where administrators can initiate scans, view scan results, and download reports.
@@ -83,42 +120,6 @@ Database (PostgreSQL):
     * Devices: Stores IP addresses, MAC addresses, and other relevant network information for each scanned device.
     * Services: Stores open ports, running services, and detected software versions for each device.
     * Vulnerabilities: Maps CVEs to specific services and versions. Includes vulnerability severity, CVE description, and links to external databases.
-
-Folder Structure:
-```
-project-root/
-│
-├── frontend/                       # React frontend (Optional)
-│   ├── public/
-│   ├── src/
-│   │   ├── components/             # Reusable UI components
-│   │   ├── pages/                  # Main pages (Dashboard, Reports, etc.)
-│   │   └── App.tsx                 # Main React component
-│   └── package.json                # Frontend dependencies
-│
-├── backend/                        # Node.js backend
-│   ├── src/
-│   │   ├── controllers/            # API request handlers (e.g., start scan, get results)
-│   │   ├── services/               # Business logic for scanning and vulnerability lookup
-│   │   ├── models/                 # Database models (for PostgreSQL)
-│   │   ├── routes/                 # API routes (e.g., /scan, /results)
-│   │   └── server.ts               # Entry point for the backend
-│   └── package.json                # Backend dependencies
-│
-├── scanner/                        # Nmap + Vulnerability scanning engine
-│   ├── nmap-scripts/               # Scripts to run Nmap scans
-│   ├── vulnerability-checker/      # Queries to Vulners/CIRCL API
-│   ├── scanProcessor.ts            # Logic to process scan results and match vulnerabilities
-│   └── scannerService.ts           # Service to handle scan lifecycle
-│
-├── database/                       # PostgreSQL configurations and schema definitions
-│   ├── schemas/                    # Table definitions (devices, services, vulnerabilities)
-│   └── migrations/                 # Database migrations
-│
-├── docker/                         # Docker setup files
-│   └── docker-compose.yml
-└── README.md                       # Project overview and setup instructions
-```
 
 User Workflow:
 1. Initiating a Scan:
