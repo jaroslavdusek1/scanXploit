@@ -1,8 +1,6 @@
 # scanXploit
-scanXploit is a network security tool that scans devices, identifies open ports, running services, and known vulnerabilities, with automated exploitation capabilities and detailed vulnerability reporting
 
 scanXploit 
-Objective:
 The goal of this project is to create a security tool that scans devices in a local network, identifies open ports, determines running services and their versions, and checks for known vulnerabilities in the software. The tool will produce a vulnerability report that can be used by network administrators to assess potential risks.
 
 Folder Structure:
