@@ -85,8 +85,7 @@ Database (PostgreSQL):
     * Vulnerabilities: Maps CVEs to specific services and versions. Includes vulnerability severity, CVE description, and links to external databases.
 
 Folder Structure:
-plaintext
-Copy code
+```
 project-root/
 │
 ├── frontend/                       # React frontend (Optional)
@@ -119,6 +118,7 @@ project-root/
 ├── docker/                         # Docker setup files
 │   └── docker-compose.yml
 └── README.md                       # Project overview and setup instructions
+```
 
 User Workflow:
 1. Initiating a Scan:
