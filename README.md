@@ -1,7 +1,7 @@
 # scanXploit
 
 scanXploit 
-The goal of this project is to create a security tool that scans devices in a local network, identifies open ports, determines running services and their versions, and checks for known vulnerabilities in the software. The tool will produce a vulnerability report that can be used by network administrators to assess potential risks.
+The goal of this project is to create a security tool that scans devices in a local network, identifies open ports, determines running services and their versions, and checks for known vulnerabilities in the software. The tool will produce a vulnerability report that can be used by network administrators to assess potential risks. Additionally, the tool will attempt to exploit identified vulnerabilities to confirm their validity, and it will provide actionable recommendations for remediation, including specific updates or upgrades needed to resolve the issues.
 
 Folder Structure:
 ```
