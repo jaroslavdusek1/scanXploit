@@ -82,19 +82,23 @@ Performs network discovery, vulnerability scanning, and exploitation testing.
 Nmap Integration:<br>
 Scans IP ranges for devices, open ports, and service versions<br>
 Command example: nmap -sS -A <IP_RANGE><br>
+
 Vulnerability Checker:<br>
 Matches service versions against vulnerability databases (e.g., Vulners API)<br>
 Identifies CVEs, severity, and potential exploits<br>
+
 Metasploit Integration<br>
 Executes exploits on detected vulnerabilities<br>
 Verifies access using generated payloads<br>
+
 Result Processor:<br>
 Formats scan results and enriches them with vulnerability data<br>
 Database (PostgreSQL)<br>
+
 Purpose:<br>
 Store scan results, device details, and vulnerability data for reporting and analysis
 
-Schema Design:
+## DB Schemas Design:
 Devices Table:
 id: Primary Key
 ip_address: Device IP
